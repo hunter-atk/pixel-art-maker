@@ -43,7 +43,7 @@ palleteContainer.addEventListener('click', function(ev){
   ev.target.borderColor = "black";
   ev.target.borderStyle = "solid";
   ev.target.borderRadius = "50%";
-  clickColor = color;
+  clickColor = ev.target.style.backgroundColor;
 })
 container.appendChild(palleteContainer);
 palleteContainer.style.display = "flex";
