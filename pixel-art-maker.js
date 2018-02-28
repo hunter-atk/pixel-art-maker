@@ -53,7 +53,12 @@ palleteContainer.style.padding = "10px 10px 10px 10px";
 
 for (var j = 0; j < 24; j++){
   (function(index) {
-      color = "#" + Math.floor(Math.random() * 16777216).toString(16);
+      //color = "#" + Math.floor(Math.random()*16777215).toString(16);
+      var x = Math.round(0xffffff * Math.random()).toString(16);
+      var y = (6-x.length);
+      var z = "000000";
+      var z1 = z.substring(0,y);
+      color = "#" + z1 + x;
       var pallete = document.createElement('div');
 
     pallete.style.display = "flex";
@@ -81,7 +86,8 @@ textContainer.style.width = "980px";
 textContainer.style.padding = "10px 10px 10px 10px";
 
 var colorText = document.createElement('p');
-colorText.innerHTML += 'CURRENT COLOR:';
+colorText.setAttribute("font-size", "20px");
+colorText.innerText += 'CURRENT COLOR:';
 textContainer.appendChild(colorText);
 
 
@@ -98,3 +104,5 @@ currentColor.style.borderStyle = "solid";
 currentColor.style.borderColor = "black";
 currentColor.style.borderRadius = "2px";
 currentColor.style.borderWidth = "2px";
+currentColor.style.marginLeft = "10px";
+currentColor.style.marginBottom = "13px";
